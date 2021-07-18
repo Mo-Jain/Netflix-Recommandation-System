@@ -19,3 +19,22 @@ surprise library doc: http://surprise.readthedocs.io/en/stable/getting_started.h
 installing surprise: https://github.com/NicolasHug/Surprise#installation
 Research paper: http://courses.ischool.berkeley.edu/i290-dm/s11/SECURE/a1-koren.pdf (most of our work was inspired by this paper)
 SVD Decomposition : https://www.youtube.com/watch?v=P5mlg91as1c
+
+## Objectives:
+
+Predict the rating that a user would give to a movie that he ahs not yet rated.
+Minimize the difference between predicted and actual rating (RMSE and MAPE)
+## Constraints:
+
+Some form of interpretability.
+
+## Performance metric
+Best Values comes from the SVD model
+Mean Absolute Percentage 1.0726046873826458
+Root Mean Square Error: 35.01953535988152
+
+
+## Steps Involved
+Surprise library has been used which is a python scikit building and anlayzing recommandation systems. This uses a collaborative filtering model. First the data is featurized for standard regression model and then the output of the model added with the previous feature is used to train the xgboost model. The surprise library consist of baseline models such as knn model with user-user similarity and knn model with item-item similarity.MatrixFactorisation is also usedsuch as SVD and SVD++ and the output is once again used as feature to train xgboost model.So, each of the surprise baseline model is trained and output of the feature is taken as the feature for training the xgboost model to give the final output and the performance matrix.
+
+
